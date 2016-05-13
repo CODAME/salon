@@ -63,7 +63,7 @@ gulp.task('browserSync', function(){
 });
 
 gulp.task('build', function (callback) {
-	runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'], callback);
+	runSequence('clean:dist', ['sass', 'useref', 'images'], callback);
 	console.log('Building files');
 });
 
