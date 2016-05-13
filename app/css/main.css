@@ -1,0 +1,101 @@
+/* ---- reset ---- */
+
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  background-image: url("blocks.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#particles-js .info {
+  position: absolute;
+  width: 300px;
+  top: 100px;
+  left: 100px;
+}
+
+#particles-js .info img {
+  width: 300px;
+}
+
+#particles-js h2 {
+  font-size: 2rem;
+}
+
+#particles-js h3 {
+  font-size: 1.1rem;
+}
+
+#particles-js .poster {
+  position: absolute;
+  right: 0px;
+  bottom: -3px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#particles-js .poster img {
+  width: 50rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ---- sections container ---- */
+
+.salon-anauk {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.salon-anauk .poster {
+  position: absolute;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.salon-anauk .poster img {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+.salon-anauk .info {
+  position: absolute;
+  width: 300px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ---- sections footer ---- */
+
+footer {
+  background-color: #A1C8CF;
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
