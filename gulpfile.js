@@ -43,7 +43,7 @@ gulp.task('useref', function(){
 gulp.task('watch', ['browserSync', 'sass'], function(){
 	gulp.watch('app/scss/**/*.scss', ['sass']);
 	gulp.watch('app/*.html', browserSync.reload);
-	gulp.warch('app/js/**/*.js', browserSync.reload);
+	gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('clean:dist', function(){

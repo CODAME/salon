@@ -16,8 +16,8 @@
 		<div class="info">
 			<img src="images/logo.png" alt="">
 			<br><br><br><br>
-			<h2>Anouk Wipprecht</h2>
-			<h3>June 10, 2016 - 6:00pm</h3>
+			<h2 class="glitch" data-text="Anouk Wipprecht">Anouk Wipprecht</h2>
+			<h3 class="glitch" data-text="June 10, 2016 - 6:00pm">June 10, 2016 - 6:00pm</h3>
 
 		</div>
 		<div class="poster">
@@ -25,8 +25,8 @@
 		</div>
 	</div>
 
-	<section class="salon-anauk">
-		<div class="poster animated slideInLeft">
+	<section id="anouk" class="salon-anouk">
+		<div id="sliding-poster" class="poster slideInLeft">
 			<img src="images/dress.png" alt="">
 		</div>
 		<div class="info">
@@ -41,7 +41,12 @@
 		<h2>codame footer</h2>
 	</footer>
 
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 	<!--build:js js/app.js -->
+	<script src="js/scroll.js"></script>
 	<script src="js/particles.min.js"></script>
 	<script src="js/app.js"></script>
 	<!-- endbuild -->

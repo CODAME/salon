@@ -1,7 +1,7 @@
 /* ---- reset ---- */
 body {
   margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif; }
+  font-family: 'Varela', sans-serif; }
 
 canvas {
   display: block;
@@ -13,7 +13,6 @@ canvas {
   width: 100%;
   height: 100vh;
   background-color: #ffffff;
-  background-image: url("blocks.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%; }
@@ -40,29 +39,36 @@ canvas {
       padding: 0px; }
 
 /* ---- sections container ---- */
-.salon-anauk {
+.salon-anouk {
   background-color: black;
   color: white;
   width: 100%;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center; }
-  .salon-anauk .poster {
-    position: absolute;
+  .salon-anouk .poster {
+    position: relative;
+    float: left;
     left: 0px;
     margin: 0px;
     padding: 0px; }
-    .salon-anauk .poster img {
-      height: 100vh;
+    .salon-anouk .poster img {
+      width: 50vw;
       margin: 0px;
       padding: 0px; }
-  .salon-anauk .info {
-    position: absolute;
-    width: 300px;
+  .salon-anouk .info {
+    background-color: tomato;
+    position: relative;
+    float: right;
+    width: 50vw;
+    height: 100vh;
     right: 0px;
     margin: 0px;
-    padding: 0px; }
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
 /* ---- sections footer ---- */
 footer {
@@ -72,3 +78,123 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+/* ---- glitch effects ---- */
+.glitch {
+  color: black;
+  font-size: 100px;
+  position: relative;
+  width: 400px;
+  margin: 0 auto; }
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(49px, 9999px, 83px, 0); }
+  5% {
+    clip: rect(23px, 9999px, 69px, 0); }
+  10% {
+    clip: rect(39px, 9999px, 46px, 0); }
+  15% {
+    clip: rect(82px, 9999px, 72px, 0); }
+  20% {
+    clip: rect(90px, 9999px, 66px, 0); }
+  25% {
+    clip: rect(90px, 9999px, 74px, 0); }
+  30% {
+    clip: rect(82px, 9999px, 80px, 0); }
+  35% {
+    clip: rect(97px, 9999px, 71px, 0); }
+  40% {
+    clip: rect(64px, 9999px, 15px, 0); }
+  45% {
+    clip: rect(12px, 9999px, 80px, 0); }
+  50% {
+    clip: rect(45px, 9999px, 98px, 0); }
+  55% {
+    clip: rect(37px, 9999px, 54px, 0); }
+  60% {
+    clip: rect(60px, 9999px, 10px, 0); }
+  65% {
+    clip: rect(22px, 9999px, 36px, 0); }
+  70% {
+    clip: rect(30px, 9999px, 89px, 0); }
+  75% {
+    clip: rect(8px, 9999px, 52px, 0); }
+  80% {
+    clip: rect(29px, 9999px, 44px, 0); }
+  85% {
+    clip: rect(100px, 9999px, 9px, 0); }
+  90% {
+    clip: rect(97px, 9999px, 37px, 0); }
+  95% {
+    clip: rect(85px, 9999px, 41px, 0); }
+  100% {
+    clip: rect(81px, 9999px, 53px, 0); } }
+
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 #515EA2;
+  top: 0;
+  color: black;
+  background: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse; }
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(75px, 9999px, 4px, 0); }
+  5% {
+    clip: rect(94px, 9999px, 73px, 0); }
+  10% {
+    clip: rect(66px, 9999px, 78px, 0); }
+  15% {
+    clip: rect(25px, 9999px, 81px, 0); }
+  20% {
+    clip: rect(49px, 9999px, 21px, 0); }
+  25% {
+    clip: rect(39px, 9999px, 5px, 0); }
+  30% {
+    clip: rect(92px, 9999px, 44px, 0); }
+  35% {
+    clip: rect(28px, 9999px, 68px, 0); }
+  40% {
+    clip: rect(36px, 9999px, 70px, 0); }
+  45% {
+    clip: rect(41px, 9999px, 81px, 0); }
+  50% {
+    clip: rect(9px, 9999px, 1px, 0); }
+  55% {
+    clip: rect(27px, 9999px, 70px, 0); }
+  60% {
+    clip: rect(3px, 9999px, 74px, 0); }
+  65% {
+    clip: rect(71px, 9999px, 87px, 0); }
+  70% {
+    clip: rect(81px, 9999px, 60px, 0); }
+  75% {
+    clip: rect(96px, 9999px, 78px, 0); }
+  80% {
+    clip: rect(94px, 9999px, 56px, 0); }
+  85% {
+    clip: rect(43px, 9999px, 92px, 0); }
+  90% {
+    clip: rect(81px, 9999px, 1px, 0); }
+  95% {
+    clip: rect(41px, 9999px, 59px, 0); }
+  100% {
+    clip: rect(67px, 9999px, 79px, 0); } }
+
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 1px 0 #B5979E;
+  top: 0;
+  color: black;
+  background: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim-2 3s infinite linear alternate-reverse; }

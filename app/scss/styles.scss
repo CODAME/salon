@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font:normal 75% Arial, Helvetica, sans-serif;
+  font-family: 'Varela', sans-serif;
 }
 
 canvas {
@@ -17,7 +17,7 @@ canvas {
   width: 100%;
   height: 100vh;
   background-color: #ffffff;
-  background-image: url("blocks.gif");
+  // background-image: url("blocks.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -61,23 +61,23 @@ canvas {
 
 /* ---- sections container ---- */
 
-.salon-anauk {
+.salon-anouk {
   background-color: black;
   color: white;
   width: 100%;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
 
   .poster {
-    position: absolute;
+    position: relative;
+    float: left;
     left: 0px;
     margin: 0px;
     padding: 0px;
   
     img {
-      height: 100vh;
+      width: 50vw;
       margin: 0px;
       padding: 0px;
     }
@@ -85,11 +85,19 @@ canvas {
   }
 
   .info {
-    position: absolute;
-    width: 300px;
+    background-color: tomato;
+    position: relative;
+    float: right;
+    width: 50vw;
+    height: 100vh;
     right: 0px;
     margin: 0px;
     padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
 }
@@ -105,4 +113,55 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/* ---- glitch effects ---- */
+.glitch{
+  color:black;
+  font-size:100px;
+  position:relative;
+  width:400px;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 #515EA2;
+  top:0;
+  color:black;
+  background:white;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 #B5979E; 
+  top:0;
+  color:black;
+  background:white;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
 }
