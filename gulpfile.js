@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+	deploy = require('gulp-gh-pages'),
 	sass = require('gulp-sass'),
 	useref = require('gulp-useref'),
 	gulpif = require('gulp-if'),
@@ -65,6 +66,14 @@ gulp.task('browserSync', function(){
 gulp.task('build', function (callback) {
 	runSequence('clean:dist', ['sass', 'useref', 'images'], callback);
 	console.log('Building files');
+});
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', ['build'], function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
 });
 
 gulp.task('default', function (callback) {
