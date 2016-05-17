@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 canvas {
@@ -21,14 +21,6 @@ canvas {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
   
   .info {
     position: absolute;
@@ -36,6 +28,21 @@ canvas {
     top: 100px;
     left: 100px;
   
+    h2 {
+      line-height: 2.5rem;
+      font-size: 2rem;
+    }
+
+    h3 {
+      line-height: 1rem;
+      font-size: 1.1rem;
+    }
+
+    p {
+      line-height: 3rem;
+      font-size: 1rem;
+    }
+
     img {
       width: 300px;
     }
@@ -98,6 +105,24 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-weight: 300;
+      max-width: 500px;
+      line-height: 2rem;
+      margin: 10px;
+    }
+
+    a {
+      color: #7CBBED;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
   }
 
 }
@@ -107,14 +132,104 @@ canvas {
 /* ---- sections footer ---- */
 
 footer {
-  background-color: #A1C8CF;
-  width: 100vw;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
+  @keyframes ripple{
+    0% {
+      opacity: 0.3;
+    }
+    40% {
+      opacity: 0.5;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #52292A, 0 0 0 10px rgba(255,255,255,0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 10px 10px #52292A, 0 0 0 10px rgba(255,255,255,0.5);
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: #092756;
+  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .content {
+  
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 45%;
+    margin-left: -50px;
+    img {
+      width: 200px;
+      margin-bottom: 2rem;
+    }
+    ul {
+      display: flex;
+      margin-left: -120px;
+
+      .button{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align:center;
+        cursor:pointer;
+      }
+      .button:first-of-type{
+        margin-left:2em;
+      }
+      .button:after{
+        display:inline-block;
+        position:relative;
+        border-radius: 50%; 
+        content:'';
+        box-sizing:content-box;
+        backface-visibility: hidden;
+      }
+      .button:before{
+        position:relative;
+        display:block;
+        font-family: 'FontAwesome', sans-serif;
+        font-size:1.5rem;
+        z-index :1;
+        line-height:50px;
+      }
+      .fa{
+        background:rgba(255,255,255,.1);
+        tansition:transform ease-out .1s,background .2s;
+      }
+
+      .fa:after{
+        width: 50px;
+        height: 50px;
+        top:-50px;
+        left:0px;
+        transform:scale(.9);
+        box-shadow:0 0 0 2px #fff;
+        opacity:0;
+      }
+
+      .fa:before{
+        color:white;
+      }
+      .fa:hover{
+         background:rgba(255,255,255,.05);
+         transform:scale(.95);
+      }
+
+      .fa:hover:after{
+        animation:ripple 1.3s ease-out 75ms;
+      }
+    }
+  }
+}
 
 /* ---- glitch effects ---- */
 .glitch{
